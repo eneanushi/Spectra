@@ -13,6 +13,7 @@
     <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
 
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="scroll-animations.js"></script>
   </head>
   <body>
     <!-- Opening Animation -->
@@ -68,11 +69,11 @@
             <div class="@container">
               <div class="@[480px]:p-4">
                 <div
-                  class="flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded-xl items-start justify-end px-4 pb-10 @[480px]:px-10"
-                  style='background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%), url("https://cdn.usegalileo.ai/sdxl10/b77b9398-d989-4d22-8a29-89d807bd9383.png");'
+                  class="flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded-xl items-start justify-end px-4 pb-10 @[480px]:px-10 scroll-reveal"
+                  style='background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%), url("https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?q=80&w=1000&auto=format&fit=crop");'
                 >
                   <div class="flex flex-col gap-2 text-left">
-                    <div class="vision-text-container backdrop-blur-sm bg-[rgba(25,128,230,0.1)] p-6 rounded-lg border border-[rgba(255,255,255,0.1)] mb-4">
+                    <div class="vision-text-container backdrop-blur-sm bg-[rgba(25,128,230,0.1)] p-6 rounded-lg border border-[rgba(255,255,255,0.1)] mb-4 scroll-reveal-scale">
                       <h1 class="vision-text text-4xl font-black mb-3 bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent @[480px]:text-5xl">
                         We're Spectra, your technology partner.
                       </h1>
@@ -95,7 +96,7 @@
               </div>
             </div>
             <div class="flex flex-col gap-10 px-4 py-10 @container">
-              <div class="flex flex-col gap-6">
+              <div class="flex flex-col gap-6 scroll-reveal">
                 <div class="flex flex-col gap-4">
                   <h1
                     class="text-[#111418] tracking-light text-[32px] font-bold leading-tight @[480px]:text-4xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em] max-w-[720px]"
@@ -109,11 +110,12 @@
                 </div>
                 <button
                   class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-[#1980e6] text-white text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em] w-fit"
+                  onclick="document.getElementById('techModal').classList.remove('hidden')"
                 >
                   <span class="truncate">Learn more</span>
                 </button>
               </div>
-              <div class="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3">
+              <div class="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3 stagger-children">
                 <div class="flex flex-col gap-3 pb-3">
                   <div
                     class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl"
@@ -178,10 +180,22 @@
                     </p>
                   </div>
                 </div>
+                <div class="flex flex-col gap-3 pb-3">
+                  <div
+                    class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl"
+                    style='background-image: url("https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?q=80&w=1000&auto=format&fit=crop");'
+                  ></div>
+                  <div>
+                    <p class="text-[#111418] text-base font-medium leading-normal">Automation & DevOps</p>
+                    <p class="text-[#637588] text-sm font-normal leading-normal">
+                      Streamline your workflows with our automation solutions and DevOps expertise.
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
             <div class="@container">
-              <div class="flex flex-col justify-end gap-6 px-4 py-10 @[480px]:gap-8 @[480px]:px-10 @[480px]:py-20">
+              <div class="flex flex-col justify-end gap-6 px-4 py-10 @[480px]:gap-8 @[480px]:px-10 @[480px]:py-20 scroll-reveal">
                 <div class="flex flex-col gap-2 text-center">
                   <h1
                     class="text-[#111418] tracking-light text-[32px] font-bold leading-tight @[480px]:text-4xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em] max-w-[720px]"
@@ -199,6 +213,189 @@
                     </button>
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Technology Modal -->
+    <div id="techModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden backdrop-blur-sm transition-all duration-300">
+      <div class="bg-white rounded-xl p-8 max-w-4xl w-11/12 max-h-[90vh] overflow-y-auto relative scroll-reveal-scale shadow-2xl transform transition-all duration-300 hover:shadow-blue-100">
+        <button 
+          onclick="document.getElementById('techModal').classList.add('hidden')"
+          class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 transition-colors duration-200"
+        >
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+
+        <style>
+          @keyframes borderGlow {
+            0%, 100% { border-color: rgba(59, 130, 246, 0.1); }
+            50% { border-color: rgba(59, 130, 246, 0.5); }
+          }
+          
+          @keyframes pulseGlow {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0); }
+            50% { box-shadow: 0 0 20px 0 rgba(59, 130, 246, 0.15); }
+          }
+
+          .tech-box {
+            border: 2px solid rgba(59, 130, 246, 0.1);
+            background: linear-gradient(145deg, #ffffff, #f3f4f6);
+            transition: all 0.3s ease;
+          }
+
+          .tech-box:hover {
+            border-color: rgba(59, 130, 246, 0.3);
+            background: linear-gradient(145deg, #ffffff, #f0f7ff);
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.1);
+          }
+
+          .tech-box ul li {
+            transition: color 0.2s ease;
+          }
+
+          .tech-box ul li:hover {
+            color: #3b82f6;
+          }
+
+          .stagger-animation > * {
+            opacity: 0;
+            transform: translateY(10px);
+            animation: staggerFade 0.5s ease forwards;
+          }
+
+          @keyframes staggerFade {
+            to {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
+
+          .stagger-animation > *:nth-child(1) { animation-delay: 0.1s; }
+          .stagger-animation > *:nth-child(2) { animation-delay: 0.2s; }
+          .stagger-animation > *:nth-child(3) { animation-delay: 0.3s; }
+          .stagger-animation > *:nth-child(4) { animation-delay: 0.4s; }
+          .stagger-animation > *:nth-child(5) { animation-delay: 0.5s; }
+          .stagger-animation > *:nth-child(6) { animation-delay: 0.6s; }
+        </style>
+
+        <div class="space-y-8">
+          <!-- Technologies Section -->
+          <div class="transform transition-all duration-300">
+            <h2 class="text-3xl font-bold mb-4 bg-gradient-to-r from-blue-600 via-blue-400 to-cyan-400 bg-clip-text text-transparent hover:from-cyan-400 hover:to-blue-600 transition-all duration-500">Technologies & Expertise</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 stagger-animation">
+              <div class="tech-box space-y-2 p-6 rounded-xl">
+                <h3 class="font-semibold text-gray-800 bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent">Frontend</h3>
+                <ul class="text-gray-600 space-y-1">
+                  <li>• React.js & Next.js</li>
+                  <li>• Vue.js & Nuxt.js</li>
+                  <li>• Angular</li>
+                  <li>• TypeScript</li>
+                  <li>• Tailwind CSS</li>
+                </ul>
+              </div>
+              <div class="tech-box space-y-2 p-6 rounded-xl">
+                <h3 class="font-semibold text-gray-800 bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent">Backend</h3>
+                <ul class="text-gray-600 space-y-1">
+                  <li>• Node.js & Express</li>
+                  <li>• Python & Django/Flask</li>
+                  <li>• Java & Spring Boot</li>
+                  <li>• Go</li>
+                  <li>• GraphQL</li>
+                </ul>
+              </div>
+              <div class="tech-box space-y-2 p-6 rounded-xl">
+                <h3 class="font-semibold text-gray-800 bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent">Mobile</h3>
+                <ul class="text-gray-600 space-y-1">
+                  <li>• React Native</li>
+                  <li>• Flutter</li>
+                  <li>• iOS (Swift)</li>
+                  <li>• Android (Kotlin)</li>
+                </ul>
+              </div>
+              <div class="tech-box space-y-2 p-6 rounded-xl">
+                <h3 class="font-semibold text-gray-800 bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent">DevOps & Cloud</h3>
+                <ul class="text-gray-600 space-y-1">
+                  <li>• AWS & Azure & GCP</li>
+                  <li>• Docker & Kubernetes</li>
+                  <li>• CI/CD (Jenkins, GitLab)</li>
+                  <li>• Terraform & Ansible</li>
+                </ul>
+              </div>
+              <div class="tech-box space-y-2 p-6 rounded-xl">
+                <h3 class="font-semibold text-gray-800 bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent">Testing & QA</h3>
+                <ul class="text-gray-600 space-y-1">
+                  <li>• Jest & React Testing Library</li>
+                  <li>• Cypress & Selenium</li>
+                  <li>• JUnit & TestNG</li>
+                  <li>• Load Testing (JMeter)</li>
+                </ul>
+              </div>
+              <div class="tech-box space-y-2 p-6 rounded-xl">
+                <h3 class="font-semibold text-gray-800 bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent">Database & Cache</h3>
+                <ul class="text-gray-600 space-y-1">
+                  <li>• PostgreSQL & MySQL</li>
+                  <li>• MongoDB & Redis</li>
+                  <li>• Elasticsearch</li>
+                  <li>• DynamoDB</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Experience Section -->
+          <div class="transform transition-all duration-300">
+            <h2 class="text-3xl font-bold mb-4 bg-gradient-to-r from-blue-600 via-blue-400 to-cyan-400 bg-clip-text text-transparent hover:from-cyan-400 hover:to-blue-600 transition-all duration-500">Our Experience</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 stagger-animation">
+              <div class="tech-box space-y-4 p-6 rounded-xl">
+                <h3 class="font-semibold text-gray-800 bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent">Development Practices</h3>
+                <ul class="text-gray-600 space-y-2">
+                  <li>• Agile & Scrum methodologies</li>
+                  <li>• Test-Driven Development (TDD)</li>
+                  <li>• Continuous Integration/Deployment</li>
+                  <li>• Code Review & Pair Programming</li>
+                  <li>• Performance Optimization</li>
+                </ul>
+              </div>
+              <div class="tech-box space-y-4 p-6 rounded-xl">
+                <h3 class="font-semibold text-gray-800 bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent">Industry Experience</h3>
+                <ul class="text-gray-600 space-y-2">
+                  <li>• E-commerce & Retail</li>
+                  <li>• FinTech & Banking</li>
+                  <li>• Healthcare & Telemedicine</li>
+                  <li>• Gaming & Entertainment</li>
+                  <li>• Enterprise Solutions</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Automation Capabilities -->
+          <div class="transform transition-all duration-300">
+            <h2 class="text-3xl font-bold mb-4 bg-gradient-to-r from-blue-600 via-blue-400 to-cyan-400 bg-clip-text text-transparent hover:from-cyan-400 hover:to-blue-600 transition-all duration-500">Automation Capabilities</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 stagger-animation">
+              <div class="tech-box space-y-4 p-6 rounded-xl">
+                <h3 class="font-semibold text-gray-800 bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent">Process Automation</h3>
+                <ul class="text-gray-600 space-y-2">
+                  <li>• Workflow Automation</li>
+                  <li>• Business Process Automation</li>
+                  <li>• RPA (Robotic Process Automation)</li>
+                  <li>• Custom Automation Solutions</li>
+                </ul>
+              </div>
+              <div class="tech-box space-y-4 p-6 rounded-xl">
+                <h3 class="font-semibold text-gray-800 bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent">DevOps Automation</h3>
+                <ul class="text-gray-600 space-y-2">
+                  <li>• Infrastructure as Code</li>
+                  <li>• Automated Testing & Deployment</li>
+                  <li>• Monitoring & Alert Systems</li>
+                  <li>• Security Automation</li>
+                </ul>
               </div>
             </div>
           </div>
