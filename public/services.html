@@ -1,0 +1,180 @@
+<?html>
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Inter%3Awght%40400%3B500%3B700%3B900&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Our Services - Spectra Technologies</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  </head>
+  <body>
+    <div class="relative flex size-full min-h-screen flex-col bg-white group/design-root overflow-x-hidden" style='font-family: Inter, "Noto Sans", sans-serif;'>
+      <div class="layout-container flex h-full grow flex-col">
+        <!-- Header -->
+        <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#f0f2f4] px-10 py-3">
+          <div class="flex items-center gap-4 text-[#111418]">
+            <a href="index.html" class="flex items-center gap-4">
+              <div class="size-4">
+                <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M13.8261 17.4264C16.7203 18.1174 20.2244 18.5217 24 18.5217C27.7756 18.5217 31.2797 18.1174 34.1739 17.4264C36.9144 16.7722 39.9967 15.2331 41.3563 14.1648L24.8486 40.6391C24.4571 41.267 23.5429 41.267 23.1514 40.6391L6.64374 14.1648C8.00331 15.2331 11.0856 16.7722 13.8261 17.4264Z"
+                    fill="currentColor"
+                  ></path>
+                </svg>
+              </div>
+              <h2 class="text-[#111418] text-lg font-bold leading-tight tracking-[-0.015em]">Spectra</h2>
+            </a>
+          </div>
+          <div class="flex flex-1 justify-end gap-8">
+            <div class="flex items-center gap-9">
+              <a class="text-[#111418] text-sm font-medium leading-normal" href="index.html">Home</a>
+              <a class="text-[#111418] text-sm font-medium leading-normal" href="services.html">Services</a>
+              <a class="text-[#111418] text-sm font-medium leading-normal" href="contact.html">Contact</a>
+            </div>
+          </div>
+        </header>
+
+        <!-- Services Content -->
+        <div class="px-4 md:px-40 flex flex-1 justify-center py-10">
+          <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+            <!-- Services Header -->
+            <div class="vision-text-container backdrop-blur-sm bg-[rgba(25,128,230,0.1)] p-8 rounded-lg border border-[rgba(255,255,255,0.1)] mb-8">
+              <h1 class="vision-text text-4xl font-black mb-4 bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent text-center">
+                Our Services
+              </h1>
+              <p class="text-center text-white text-lg mb-4">
+                Transforming ideas into digital reality with cutting-edge solutions
+              </p>
+            </div>
+
+            <!-- Services Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <!-- Game Development -->
+              <div class="service-card">
+                <div class="mb-4">
+                  <img src="https://cdn.usegalileo.ai/sdxl10/d44c3589-9686-4b8c-b882-728bb11a951e.png" alt="Game Development" class="w-full h-48 object-cover rounded-xl"/>
+                </div>
+                <h3 class="text-2xl font-bold mb-2 text-white">Game Development</h3>
+                <p class="text-gray-300 mb-4">
+                  Create immersive gaming experiences across platforms:
+                </p>
+                <ul class="list-disc list-inside text-gray-300 space-y-2">
+                  <li>Unity and Unreal Engine development</li>
+                  <li>Mobile game optimization</li>
+                  <li>Cross-platform compatibility</li>
+                  <li>Multiplayer integration</li>
+                </ul>
+              </div>
+
+              <!-- Mobile Apps -->
+              <div class="service-card">
+                <div class="mb-4">
+                  <img src="https://cdn.usegalileo.ai/sdxl10/fe9c068a-898d-4303-b00a-f5b74d863499.png" alt="Mobile Apps" class="w-full h-48 object-cover rounded-xl"/>
+                </div>
+                <h3 class="text-2xl font-bold mb-2 text-white">Mobile Apps</h3>
+                <p class="text-gray-300 mb-4">
+                  Native and cross-platform mobile solutions:
+                </p>
+                <ul class="list-disc list-inside text-gray-300 space-y-2">
+                  <li>iOS and Android development</li>
+                  <li>React Native & Flutter apps</li>
+                  <li>App Store optimization</li>
+                  <li>Performance monitoring</li>
+                </ul>
+              </div>
+
+              <!-- Web Development -->
+              <div class="service-card">
+                <div class="mb-4">
+                  <img src="https://cdn.usegalileo.ai/sdxl10/52ff0293-8385-481f-b7b3-14a5eccace24.png" alt="Web Development" class="w-full h-48 object-cover rounded-xl"/>
+                </div>
+                <h3 class="text-2xl font-bold mb-2 text-white">Web Development</h3>
+                <p class="text-gray-300 mb-4">
+                  Modern web solutions for your business:
+                </p>
+                <ul class="list-disc list-inside text-gray-300 space-y-2">
+                  <li>Responsive web applications</li>
+                  <li>Progressive Web Apps (PWA)</li>
+                  <li>E-commerce solutions</li>
+                  <li>CMS development</li>
+                </ul>
+              </div>
+
+              <!-- UI/UX Design -->
+              <div class="service-card">
+                <div class="mb-4">
+                  <img src="https://cdn.usegalileo.ai/sdxl10/3c3c8971-0aac-44ca-9b8a-7f71fb5917be.png" alt="UI/UX Design" class="w-full h-48 object-cover rounded-xl"/>
+                </div>
+                <h3 class="text-2xl font-bold mb-2 text-white">UI/UX Design</h3>
+                <p class="text-gray-300 mb-4">
+                  User-centered design solutions:
+                </p>
+                <ul class="list-disc list-inside text-gray-300 space-y-2">
+                  <li>User interface design</li>
+                  <li>User experience optimization</li>
+                  <li>Wireframing & prototyping</li>
+                  <li>Design systems</li>
+                </ul>
+              </div>
+
+              <!-- Logo Design -->
+              <div class="service-card">
+                <div class="mb-4">
+                  <img src="https://cdn.usegalileo.ai/sdxl10/6b509f9b-17a8-4662-8161-0f23848d79be.png" alt="Logo Design" class="w-full h-48 object-cover rounded-xl"/>
+                </div>
+                <h3 class="text-2xl font-bold mb-2 text-white">Logo Design</h3>
+                <p class="text-gray-300 mb-4">
+                  Brand identity development:
+                </p>
+                <ul class="list-disc list-inside text-gray-300 space-y-2">
+                  <li>Custom logo creation</li>
+                  <li>Brand guidelines</li>
+                  <li>Visual identity systems</li>
+                  <li>Brand collateral</li>
+                </ul>
+              </div>
+
+              <!-- IT Services -->
+              <div class="service-card">
+                <div class="mb-4">
+                  <img src="https://cdn.usegalileo.ai/sdxl10/2aef44f3-8fea-4c67-9c42-4e573206aca7.png" alt="IT Services" class="w-full h-48 object-cover rounded-xl"/>
+                </div>
+                <h3 class="text-2xl font-bold mb-2 text-white">IT Services</h3>
+                <p class="text-gray-300 mb-4">
+                  Comprehensive IT solutions:
+                </p>
+                <ul class="list-disc list-inside text-gray-300 space-y-2">
+                  <li>Cloud infrastructure</li>
+                  <li>Cybersecurity</li>
+                  <li>System maintenance</li>
+                  <li>Technical support</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Call to Action -->
+            <div class="vision-text-container backdrop-blur-sm bg-[rgba(25,128,230,0.1)] p-8 rounded-lg border border-[rgba(255,255,255,0.1)] mt-12">
+              <h2 class="vision-text text-3xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent text-center">
+                Ready to Start Your Project?
+              </h2>
+              <div class="flex justify-center">
+                <a
+                  href="contact.html"
+                  class="flex min-w-[200px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-12 px-8 bg-gradient-to-r from-[#42D3FF] to-[#FF59CE] text-white text-base font-bold leading-normal tracking-wider hover:scale-105 transition-all duration-300"
+                >
+                  Get in Touch
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html> 

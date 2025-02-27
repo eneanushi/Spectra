@@ -1,0 +1,618 @@
+/* Futuristic background effect */
+.group\/design-root {
+  background: linear-gradient(125deg, #000B18, #0A2342, #001F54);
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  color: #ffffff;
+}
+
+.group\/design-root::before {
+  content: '';
+  position: fixed;
+  width: 200%;
+  height: 200%;
+  background: 
+    radial-gradient(circle at 50% 50%, rgba(66, 211, 255, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 70% 30%, rgba(255, 89, 206, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 30% 70%, rgba(120, 252, 255, 0.05) 0%, transparent 50%);
+  animation: rotate 30s linear infinite;
+  top: -50%;
+  left: -50%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Grid pattern overlay */
+.group\/design-root::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(rgba(66, 211, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(66, 211, 255, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+  animation: gridMove 20s linear infinite;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Layout container adjustments */
+.layout-container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Header adjustments */
+header {
+  background: rgba(0, 11, 24, 0.8);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  border-bottom: 1px solid rgba(66, 211, 255, 0.1);
+}
+
+/* Glowing button effect */
+button {
+  position: relative;
+  overflow: hidden !important;
+  transition: all 0.4s ease !important;
+  background: linear-gradient(45deg, #42D3FF, #FF59CE) !important;
+  box-shadow: 0 4px 15px rgba(66, 211, 255, 0.3);
+  border: none;
+}
+
+button:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(66, 211, 255, 0.4);
+}
+
+button::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 60%);
+  transform: rotate(45deg);
+  animation: buttonGlow 4s ease-in-out infinite;
+}
+
+/* Service cards hover effect */
+.flex.flex-col.gap-3.pb-3 {
+  transition: all 0.4s ease;
+  position: relative;
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(10px);
+  border-radius: 24px;
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+}
+
+.flex.flex-col.gap-3.pb-3:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.3);
+  border-color: rgba(66, 211, 255, 0.2);
+}
+
+.flex.flex-col.gap-3.pb-3::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  padding: 2px;
+  background: linear-gradient(45deg, #1980e6, #5cb6ff);
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.flex.flex-col.gap-3.pb-3:hover::after {
+  opacity: 1;
+}
+
+/* Navigation links hover effect */
+header a {
+  position: relative;
+  transition: all 0.3s ease;
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+header a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(to right, #42D3FF, #FF59CE);
+  transition: width 0.4s ease;
+}
+
+header a:hover::after {
+  width: 100%;
+}
+
+/* Animations */
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes gridMove {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(40px);
+  }
+}
+
+@keyframes buttonGlow {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 0.3;
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+    opacity: 0.8;
+  }
+}
+
+/* Text glow effect for headings */
+h1 {
+  text-shadow: 0 0 10px rgba(25, 128, 230, 0.3);
+}
+
+/* Service images hover effect */
+.aspect-video {
+  transition: transform 0.3s ease;
+}
+
+.flex.flex-col.gap-3.pb-3:hover .aspect-video {
+  transform: scale(1.05);
+}
+
+/* Text color adjustments */
+.text-\[\#111418\] {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.text-\[\#637588\] {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+/* Make buttons more visible */
+button.bg-\[\#f0f2f4\] {
+  background: rgba(255, 255, 255, 0.15) !important;
+  color: #ffffff !important;
+}
+
+/* Vision text styling */
+.vision-text-container {
+  position: relative;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.02);
+  box-shadow: 
+    0 8px 32px 0 rgba(31, 38, 135, 0.37),
+    inset 0 0 32px 0 rgba(66, 211, 255, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  transform: translateZ(0);
+}
+
+.vision-text-container::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    125deg,
+    transparent 0%,
+    rgba(66, 211, 255, 0.1) 30%,
+    rgba(255, 89, 206, 0.1) 70%,
+    transparent 100%
+  );
+  animation: shine 8s linear infinite;
+  z-index: 1;
+}
+
+.vision-text {
+  position: relative;
+  z-index: 2;
+  background-size: 300% 300%;
+  animation: gradientFlow 8s ease infinite;
+}
+
+.vision-text-container h1 {
+  background: linear-gradient(to right, #42D3FF, #FF59CE, #78FCFF);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  line-height: 1.2;
+  letter-spacing: -0.033em;
+}
+
+.vision-text-container p {
+  background: linear-gradient(to right, #78FCFF, #42D3FF, #FF59CE);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Modern animations */
+@keyframes gradientFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes shine {
+  0% {
+    transform: translateX(-100%) skewX(-15deg);
+  }
+  50% {
+    transform: translateX(100%) skewX(-15deg);
+  }
+  100% {
+    transform: translateX(100%) skewX(-15deg);
+  }
+}
+
+/* Contact Page Styles */
+.contact-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1);
+}
+
+.form-group textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.submit-btn {
+  background: linear-gradient(45deg, #42D3FF, #FF59CE);
+  color: white;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.submit-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  animation: shine 1.5s infinite;
+}
+
+.success-message {
+  background: rgba(46, 213, 115, 0.1);
+  color: #2ed573;
+  padding: 1rem;
+  border-radius: 12px;
+  text-align: center;
+  display: none;
+}
+
+.error-message {
+  background: rgba(255, 71, 87, 0.1);
+  color: #ff4757;
+  padding: 1rem;
+  border-radius: 12px;
+  text-align: center;
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .contact-container {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+  
+  .submit-btn {
+    width: 100%;
+  }
+}
+
+.optional-label {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.8rem;
+  margin-left: 0.5rem;
+}
+
+.contact-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.contact-header h1 {
+  font-size: 2.5rem;
+  background: linear-gradient(45deg, #42D3FF, #FF59CE);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 1rem;
+}
+
+.contact-header p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Form Grid Layout */
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Service Card Styles */
+.service-card {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 24px;
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    125deg,
+    transparent 0%,
+    rgba(66, 211, 255, 0.1) 30%,
+    rgba(255, 89, 206, 0.1) 70%,
+    transparent 100%
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(66, 211, 255, 0.2);
+  box-shadow: 
+    0 10px 40px rgba(0, 0, 0, 0.2),
+    0 0 20px rgba(66, 211, 255, 0.2);
+}
+
+.service-card:hover::before {
+  opacity: 1;
+}
+
+.service-card img {
+  transition: transform 0.4s ease;
+}
+
+.service-card:hover img {
+  transform: scale(1.05);
+}
+
+.service-card h3 {
+  position: relative;
+  background: linear-gradient(to right, #42D3FF, #FF59CE);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.service-card ul li {
+  position: relative;
+  padding-left: 0.5rem;
+}
+
+.service-card ul li::before {
+  content: '•';
+  color: #42D3FF;
+  position: absolute;
+  left: -0.5rem;
+}
+
+/* Opening Animation */
+.opening-animation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000B18;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: fadeOut 3.5s ease-in-out forwards;
+}
+
+.logo-animation {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  transform: scale(0);
+  animation: logoScale 3s ease-in-out forwards;
+}
+
+.logo-animation svg {
+  width: 100%;
+  height: 100%;
+}
+
+.logo-animation path {
+  fill: transparent;
+  stroke: #42D3FF;
+  stroke-width: 2;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: drawLogo 2s ease-in-out forwards, fillLogo 1s ease-in-out 2s forwards;
+}
+
+.logo-text {
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2.5rem;
+  font-weight: 900;
+  background: linear-gradient(45deg, #42D3FF, #FF59CE);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  opacity: 0;
+  animation: fadeInText 1s ease-in-out 1.5s forwards;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    visibility: visible;
+  }
+  85% {
+    opacity: 1;
+    visibility: visible;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@keyframes logoScale {
+  0% {
+    transform: scale(0);
+  }
+  40% {
+    transform: scale(1.2);
+  }
+  60% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes drawLogo {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes fillLogo {
+  from {
+    fill: transparent;
+  }
+  to {
+    fill: #42D3FF;
+  }
+}
+
+@keyframes fadeInText {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 20px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+} 
